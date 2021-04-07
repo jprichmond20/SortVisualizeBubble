@@ -1,4 +1,4 @@
-package edu.coe.hughes;
+package edu.coe.richmond;
 
 import java.util.ArrayList;
 

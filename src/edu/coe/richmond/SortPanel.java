@@ -1,4 +1,4 @@
-package edu.coe.hughes;
+package edu.coe.richmond;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +11,7 @@ public class SortPanel extends JPanel {
     public static final int RANGE = 40;
     public static final int INSERT= 1;
     public static final int SELECT = 2;
+    public static final int BUBBLE = 3;
 
     ArrayList<Integer> values;
     ArrayList<Integer> sortedValues;
@@ -43,6 +44,9 @@ public class SortPanel extends JPanel {
                     break;
                 case SELECT:
                     ss = new SelectionStrategy();
+                    break;
+                case BUBBLE:
+                    ss = new BubbleStrategy();
                     break;
             }
         }

@@ -1,4 +1,4 @@
-package edu.coe.hughes;
+package edu.coe.richmond;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +12,7 @@ public class GraphPanel extends JPanel {
     private JPanel ctrlPanel;
     private JRadioButton insert;
     private JRadioButton select;
+    private JRadioButton bubble;
     private ButtonGroup bg;
 
     public GraphPanel() {
@@ -36,9 +37,12 @@ public class GraphPanel extends JPanel {
         });
         insert = new JRadioButton("Insertion");
         select = new JRadioButton("Selection");
+        bubble = new JRadioButton("Bubble");
+
         bg = new ButtonGroup();
         bg.add(insert);
         bg.add(select);
+        bg.add(bubble);
 
         insert.addActionListener(new ActionListener() {
             @Override
@@ -54,10 +58,18 @@ public class GraphPanel extends JPanel {
             }
         });
 
+        bubble.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sp.setStrategy(SortPanel.BUBBLE);
+            }
+        });
+
         ctrlPanel.add(start);
         ctrlPanel.add(reset);
         ctrlPanel.add(insert);
         ctrlPanel.add(select);
+        ctrlPanel.add(bubble);
         add(ctrlPanel);
     }
 }

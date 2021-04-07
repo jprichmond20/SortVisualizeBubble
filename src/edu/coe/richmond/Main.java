@@ -1,7 +1,6 @@
-package edu.coe.hughes;
+package edu.coe.richmond;
 
 import javax.swing.*;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,5 +10,10 @@ public class Main {
         frame.getContentPane().add(gp);
         frame.pack();
         frame.setVisible(true);
+
+        //Invert bubble sort paintComponent, do not start at the beginning, start at the end
+        //Create list of numbers and pass it into each SortPanel from MainPanel
+        //Fix the "pass reference" using object "clone" method
+
     }
 }

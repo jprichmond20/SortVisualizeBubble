@@ -6,8 +6,10 @@ public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        GraphPanel gp = new GraphPanel();
-        frame.getContentPane().add(gp);
+        //GraphPanel gp = new GraphPanel();
+        //frame.getContentPane().add(gp);
+        ComparePanel cp = new ComparePanel();
+        frame.getContentPane().add(cp);
         frame.pack();
         frame.setVisible(true);
 

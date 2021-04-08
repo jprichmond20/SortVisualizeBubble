@@ -12,6 +12,10 @@ public class SortPanel extends JPanel {
     public static final int INSERT= 1;
     public static final int SELECT = 2;
     public static final int BUBBLE = 3;
+    private static JLabel bubbs;
+    private static JLabel inser;
+    private static JLabel selec;
+
 
     ArrayList<Integer> values;
     ArrayList<Integer> sortedValues;
@@ -25,6 +29,7 @@ public class SortPanel extends JPanel {
 
     public SortPanel() {
         setPreferredSize(new Dimension(500,500));
+        setBorder(BorderFactory.createLineBorder(Color.BLACK));
         values = new ArrayList<Integer>();
         sortedValues = new ArrayList<Integer>();
         running = false;
@@ -41,12 +46,18 @@ public class SortPanel extends JPanel {
             switch (s) {
                 case INSERT:
                     ss = new InsertionStrategy();
+                    inser = new JLabel("Insertion");
+                    add(inser);
                     break;
                 case SELECT:
                     ss = new SelectionStrategy();
+                    selec = new JLabel("Selection");
+                    add(selec);
                     break;
                 case BUBBLE:
                     ss = new BubbleStrategy();
+                    bubbs = new JLabel("Bubble");
+                    add(bubbs);
                     break;
             }
         }

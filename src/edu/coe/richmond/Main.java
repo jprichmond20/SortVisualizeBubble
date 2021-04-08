@@ -1,5 +1,5 @@
 package edu.coe.richmond;
-
+//Close
 import javax.swing.*;
 
 public class Main {

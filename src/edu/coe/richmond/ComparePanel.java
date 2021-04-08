@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class ComparePanel extends JPanel {
     private SortPanel ins;
@@ -16,16 +17,22 @@ public class ComparePanel extends JPanel {
     private JRadioButton select;
     private JRadioButton bubble;
     private ButtonGroup bg;
+    ArrayList<Integer> nums;
+    public static final int NUM_ITEMS = 70;
+    public static final int RANGE = 40;
 
     public ComparePanel() {
         setPreferredSize(new Dimension(500, 500));
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        ins = new SortPanel();
+        setNums();
+
+        ins = new SortPanel((ArrayList<Integer>) nums.clone());
         ins.setStrategy(SortPanel.INSERT);
-        sel = new SortPanel();
+        sel = new SortPanel((ArrayList<Integer>) nums.clone());
         sel.setStrategy(SortPanel.SELECT);
-        bubb = new SortPanel();
+        bubb = new SortPanel((ArrayList<Integer>) nums.clone());
         bubb.setStrategy(SortPanel.BUBBLE);
+
 
 
 
@@ -88,6 +95,13 @@ public class ComparePanel extends JPanel {
         //ctrlPanel.add(select);
         //ctrlPanel.add(bubble);
         add(ctrlPanel);
+    }
+
+    private void setNums() {
+        nums = new ArrayList<Integer>();
+        for (int i = 0; i < NUM_ITEMS; i++){
+            nums.add( (int) (Math.random()* RANGE) +1);
+        }
     }
 }
 

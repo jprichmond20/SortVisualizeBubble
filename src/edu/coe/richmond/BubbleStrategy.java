@@ -7,26 +7,20 @@ public class BubbleStrategy implements SortStrategy {
     @Override
     public void nextSortStep(ArrayList<Integer> values, ArrayList<Integer> sortedValues) {
         int temp;
-        int i = sortedValues.size();
-        boolean cont = true;
-        while (cont) {
-            sortedValues.add(values.get(i));
-            if (sortedValues.size() > 2 && i > 0) {
-                if (sortedValues.get(i) < sortedValues.get(i - 1)) {
-                    temp = sortedValues.get(i);
-                    sortedValues.set(i, sortedValues.get(i - 1));
-                    sortedValues.set(i - 1, temp);
-                    i--;
-                    cont = true;
-                } else {
-                    cont = false;
-                }
+        //int i = sortedValues.size();
+        for (int i = values.size() - 1; i > 0; i--) {
+            if (values.get(i) < values.get(i - 1)) {
+                temp = values.get(i);
+                values.set(i, values.get(i - 1));
+                values.set(i - 1, temp);
             }
         }
-            System.out.println(sortedValues.size());
+        sortedValues.add(values.get(0));
+        values.remove(0);
+        System.out.println(sortedValues.size());
 
 
-        values.remove(i);
+        //values.remove(i);
 
     }
 }
